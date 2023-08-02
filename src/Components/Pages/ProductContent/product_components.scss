@@ -1,0 +1,25 @@
+.prodcut_content_component{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px 20px;
+    width: 95%;
+    margin: auto;
+    margin-top: 2%;   
+}
+
+.product_components{
+    border-radius:7px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 7%;
+
+    img{
+        width: 100%
+    }
+
+    div:nth-child(2){    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
