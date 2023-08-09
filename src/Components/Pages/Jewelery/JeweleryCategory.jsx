@@ -4,6 +4,7 @@ import "./jeweleryCategory.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getJeweleryDetails } from "../../../Store/Actions/BaseActions";
+import SkeletonpProdcuts from "../AllProduct/Skeleton";
 
 export default function Jewelery() {
   const dispatch = useDispatch();
@@ -12,22 +13,25 @@ export default function Jewelery() {
     dispatch(getJeweleryDetails({ payload: "payload" }));
   }, []);
 
-  const [res, setRes] = useState([]);
-
   const result = useSelector((state) => state.result);
-  result && console.log(result.result.result);
+  const [res, setRes] = useState([]);
+  const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    if (result && result.result && result.result.result) {
+      setRes(result.result.result);
+      setShow(true);
+    }
+  }, [result]);
   return (
     <div className="all_products_content">
       <div className="selectCategoryOfTheProducts"></div>
       <div className="product_content_component">
-        {result ? (
+        {show && res.length > 0 ? (
           <ProductConent products={result.result.result}></ProductConent>
         ) : (
           <>
-            <Skeleton active className="content_spin_loader" />
-            <Skeleton active className="content_spin_loader" />
-            <Skeleton active className="content_spin_loader" />
+            <SkeletonpProdcuts></SkeletonpProdcuts>;
           </>
         )}
       </div>

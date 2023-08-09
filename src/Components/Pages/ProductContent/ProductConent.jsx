@@ -11,6 +11,7 @@ export default function ProductConent({ products }) {
             <div>
               <img src={image} alt="" />
             </div>
+
             <div>
               <div>{title}</div>
               <div>{`${description.slice(0, 20)}...`}</div>

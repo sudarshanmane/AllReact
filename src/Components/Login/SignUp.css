@@ -1,0 +1,54 @@
+.logoImage {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  margin: auto;
+  border-radius: 7px;
+}
+.logoImage img {
+  width: 40%;
+}
+
+.sizedBox {
+  width: 0px;
+  height: 10px;
+}
+
+.form_container {
+  border-radius: 7px;
+  width: 50%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 1%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.form_container .form_div {
+  width: 100%;
+  display: grid;
+}
+.form_container .form_div h3 {
+  padding-left: 8%;
+}
+.form_container .signUpForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding-left: 8%;
+}
+.form_container .signUpForm .form_input_feild {
+  width: 120%;
+}
+.form_container .signUpForm .submit_button {
+  width: 270%;
+}
+.form_container .login_button {
+  margin-top: -4%;
+}/*# sourceMappingURL=SignUp.css.map */

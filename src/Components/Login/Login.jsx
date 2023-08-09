@@ -6,10 +6,6 @@ import { loginAction } from "../../Store/Actions/BaseActions";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [userCred, setUsserCred] = useState({
-    password: "",
-    username: "",
-  });
 
   const userCredRef = useRef({
     password: "",
@@ -17,15 +13,7 @@ const Login = () => {
   });
 
   const onFinish = (values) => {
-    // let payload = Object.entries(values)
-    //   .map(([key, value]) => `|${key}|:|${value}|`)
-    //   .join(",");
-
     dispatch(loginAction(values));
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
   };
 
   useEffect(() => {
@@ -40,7 +28,6 @@ const Login = () => {
       style={{ maxWidth: 600 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item

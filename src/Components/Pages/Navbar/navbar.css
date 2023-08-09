@@ -1,0 +1,26 @@
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 1%;
+  background: #190c55;
+}
+
+.navbar_row_one {
+  width: 20%;
+}
+
+.navbar_row_two {
+  width: 60%;
+}
+
+.navbar_elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.navbar_elements img {
+  width: 100%;
+}/*# sourceMappingURL=navbar.css.map */

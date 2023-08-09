@@ -15,6 +15,7 @@ export default function RootReducer(state = [], action) {
         ...state,
         loading: true,
         action,
+        result: [],
       };
     }
 
@@ -31,6 +32,7 @@ export default function RootReducer(state = [], action) {
         ...state,
         loading: true,
         action,
+        result: [],
       };
     }
 
@@ -46,7 +48,7 @@ export default function RootReducer(state = [], action) {
       return {
         ...state,
         loading: true,
-        result: action,
+        result: [],
       };
     }
 
@@ -62,6 +64,24 @@ export default function RootReducer(state = [], action) {
         loading: false,
         status: action.status,
         loginData: action.data,
+      };
+    }
+
+    case ApiConstants.API_USER_SIGNUP_LOAD: {
+      console.log("inside reducer signup");
+      return {
+        ...state,
+        loading: true,
+        action,
+        result: [],
+      };
+    }
+
+    case ApiConstants.API_USER_SIGNUP_LOAD_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        result: action,
       };
     }
 

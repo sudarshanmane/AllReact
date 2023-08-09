@@ -20,3 +20,10 @@ export function loginAction(payload) {
     payload,
   };
 }
+
+export function sigunUpAction(payload) {
+  return {
+    type: ApiConstants.API_USER_SIGNUP_LOAD,
+    payload,
+  };
+}

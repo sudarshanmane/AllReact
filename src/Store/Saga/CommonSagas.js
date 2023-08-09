@@ -19,6 +19,8 @@ export function* GetAppProdcutsDetails(action) {
     yield failSaga(" process executed successfully");
 
     if (result.status === AppConstants.ApiSuccess) {
+      console.log(result);
+
       yield put({
         type: ApiConstants.API_GET_ALL_PRODUCTS_SUCCESS,
         result,
@@ -38,7 +40,6 @@ export function* fetchJeweleryDetails(action) {
       action.payload,
       "/products/category/jewelery"
     );
-
     if (result.status === AppConstants.ApiSuccess) {
       yield put({
         type: ApiConstants.API_GET_JEWELERY_SUCCESS,
@@ -55,11 +56,30 @@ export function* fetchJeweleryDetails(action) {
 
 export function* userLoginSage(action) {
   try {
-    const result = yield Method.loginAxios(action.payload, "/auth/login");
+    const result = yield Method.postData(action.payload, "/auth/login");
 
     if (result.status === AppConstants.ApiSuccess) {
       yield put({
         type: ApiConstants.API_USER_LOGIN_LOAD_SUCCESS,
+        result: result.result,
+        status: "ok",
+      });
+    } else {
+      yield call(failSaga("something went wrong"));
+    }
+  } catch (error) {
+    console.log("inside error of the common function");
+  }
+}
+
+export function* userSignupSage(action) {
+  console.log("inside user signup action");
+  try {
+    const result = yield Method.postData(action.payload, "/users");
+
+    if (result.status === AppConstants.ApiSuccess) {
+      yield put({
+        type: ApiConstants.API_USER_SIGNUP_SUCCESS,
         result: result.result,
         status: "ok",
       });

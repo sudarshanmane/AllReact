@@ -1,0 +1,64 @@
+@import "../../Utils/StyleMixins.scss";
+
+
+.logoImage{
+    height: 30% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;  
+    margin: auto;
+    border-radius: 7px;
+    
+    img{
+        width: 40%;
+    }
+}
+
+.sizedBox{
+    @include sizedBox(0px, 10px)
+}
+
+.form_container{
+    border-radius: 7px;
+    width: 50%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .form_div{
+        width: 100%;
+        display: grid;
+        h3{
+            padding-left: 8%;
+        }
+    }
+
+    .signUpForm{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        padding-left: 8%;
+
+        .form_input_feild{
+            width: 120%;
+        }
+
+        .submit_button{
+            width: 270%;
+        }
+
+    }
+    .login_button{
+            margin-top: -4%;
+    }
+
+}
+

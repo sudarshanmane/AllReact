@@ -23,13 +23,14 @@ export const Method = {
     }
   },
 
-  async loginAxios(payload, url) {
+  async postData(payload, url) {
     try {
       const response = await http.post(url, payload);
       console.log(payload);
       console.log(response);
 
       if (response.status === 200) {
+        console.log("inside success status");
         return {
           status: AppConstants.ApiSuccess,
           result: response.data,

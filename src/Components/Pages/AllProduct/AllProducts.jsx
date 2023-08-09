@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductConent from "../ProductContent/ProductConent";
 import { getAllProductDetailsAction } from "../../../Store/Actions/BaseActions";
 import "./allProduct.scss";
-
-import { Button, Dropdown, Skeleton, Spin, message } from "antd";
+import SkeletonpProdcuts from "./Skeleton";
 
 export default function AllProducts() {
   const dispatch = useDispatch();
@@ -17,23 +16,21 @@ export default function AllProducts() {
   const [res, setRes] = useState([]);
 
   useEffect(() => {
-    result && setRes(result.result.result);
+    if (result && result.result && result.result.result) {
+      setRes(result.result.result);
+    }
   }, [result]);
 
   return (
     <div className="all_products_content">
-      <div className="selectCategoryOfTheProducts"></div>
       <div className="product_content_component">
-        {result ? (
+        {res.length > 0 ? (
           <ProductConent products={res}></ProductConent>
         ) : (
           <>
-            <Skeleton active className="content_spin_loader" />
-            <Skeleton active className="content_spin_loader" />
-            <Skeleton active className="content_spin_loader" />
+            <SkeletonpProdcuts></SkeletonpProdcuts>;
           </>
         )}
-        s
       </div>
     </div>
   );

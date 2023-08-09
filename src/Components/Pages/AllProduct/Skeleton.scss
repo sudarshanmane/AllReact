@@ -1,0 +1,22 @@
+
+.skeleton_container{
+    display: flex;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 5% 3%;
+    margin: auto;
+    margin-top:2% ;
+  }
+  
+  .skeleton_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 200px;
+    border: 1px solid rgb(247, 217, 217);
+    padding: 2%;
+    border-radius: 7px;
+  }
+  
